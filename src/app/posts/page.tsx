@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getLastPost } from "@/lib/api";
+import { getAllPost } from "@/lib/api";
 import PostList from "@/components/PostsList";
 
-export default async function Home() {
-  const posts = await getLastPost();
+export default async function Page() {
+  const posts = await getAllPost();
   return (
     <>
       <div className="main-heading">
-        <h1>Selamat datang di NextJS News</h1>
+        <h2>Daftar Tulisan</h2>
         <p className="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatem velit deserunt placeat nihil exercitationem omnis autem perferendis error saepe?</p>
       </div>
       <PostList posts={posts}/>
